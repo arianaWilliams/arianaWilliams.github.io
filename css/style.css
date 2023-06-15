@@ -39,8 +39,10 @@ h5 {
   font-family: "Montserrat", sans-serif;
   text-align: center;
 }
-p {
+#introduction {
   font-family: "Open Sans", sans-serif;
+  color: black;
+  font-weight: 570;
 }
 .nav-wrapper {
   background-color: rgb(211, 174, 129);
@@ -50,4 +52,41 @@ body {
   background-image: url("/photos/backgroundImage.jpg");
   background-position: center;
   height: 5px;
+}
+/* use this link to animate the photo https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations */
+.card {
+  width: 15rem;
+  border-radius: 1rem;
+  text-align: center;
+  border: 1px solid rgb(89, 153, 131);
+  background: linear-gradient(35deg, grey);
+  box-shadow: 10px 5px 5px rgb(89, 153, 131);
+  opacity: 0.9;
+  transition: 0.4s;
+  transform: perspective(500px) rotateY(45deg);
+}
+#bingo {
+  object-fit: cover;
+  border-radius: 1rem;
+}
+a {
+  color: orangered;
+}
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" bold, "GRAD" 0, "opsz" 20;
+}
+#mainContainer {
+  box-sizing: border-box;
+}
+#card-stack {
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card:hover {
+  transform: perspective(500px) rotateY(0deg) scale(1.5);
+}
+.card:hover ~ .card {
+  transform: translateX(25rem) rotate(45deg);
 }
