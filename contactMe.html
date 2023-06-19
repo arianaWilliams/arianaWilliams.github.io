@@ -27,6 +27,88 @@
       </nav>
     </header>
 
-    <main></main>
+    <section>
+      <div class="flex-container">
+        <div id="contact-form" class="row">
+          <form class="col s12">
+            <div class="short-text">
+              <label for="first-name">First name:</label>
+              <input
+                placeholder="Enter your first name"
+                type="text"
+                id="first-name"
+                name="first-name"
+                required
+              />
+            </div>
+            <div class="short-text">
+              <label for="last-name">Last name:</label>
+              <input
+                placeholder="Enter your last name"
+                type="text"
+                id="last-name"
+                name="last-name"
+                required
+              />
+            </div>
+            <div class="short-text">
+              <label for="phone-number">Phone number:</label>
+              <input
+                placeholder="Enter your phone number"
+                type="tel"
+                id="phone-number"
+                name="phone-number"
+              />
+            </div>
+            <div id="email">
+              <label for="email">email:</label>
+              <input
+                placeholder="Enter your email"
+                type="text"
+                id="email"
+                name="email"
+                required
+              />
+            </div>
+            <div id="text-area">
+              <label for="text-area">Lets get in contact</label>
+              <br />
+              <textarea
+                placeholder="You can email me here..."
+                name="text-area"
+                id="text-area"
+                cols="30"
+                rows="10"
+                data-length="300"
+              >
+              </textarea>
+            </div>
+            <div id="submit">
+              <input id="submit-button" type="submit" value="Email Me" />
+            </div>
+          </form>
+        </div>
+        <div id="social-media">
+          <div id="github">
+            <a href="https://github.com/arianaWilliams?tab=repositories"
+              >Git Hub</a
+            >
+          </div>
+          <div id="linkedin">
+            <a
+              class="badge-base__link LI-simple-link"
+              href="https://www.linkedin.com/in/ariana-williams-584568125?trk=profile-badge"
+              >Linked In</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://platform.linkedin.com/badges/js/profile.js"
+      async
+      defer
+      type="text/javascript"
+    ></script>
   </body>
 </html>
