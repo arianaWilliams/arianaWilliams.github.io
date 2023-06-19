@@ -75,6 +75,64 @@ section {
   opacity: 0.8;
   border-radius: 3%;
 }
+#contact-form {
+  background-color: rgb(211, 174, 129);
+  width: 45%;
+  height: auto;
+}
+
+#social-media {
+  margin-left: 25px;
+  width: 45%;
+  height: 500px;
+}
+input::placeholder {
+  color: white;
+}
+#email,
+#text-area {
+  width: 400px;
+}
+#submit {
+  margin-top: 20px;
+  text-align: center;
+}
+.short-text {
+  width: 200px;
+}
+#submit-button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: rgb(7, 221, 221);
+  border: 2px solid rgb(14, 165, 165);
+}
+label {
+  color: rgb(1, 117, 117);
+  font-family: "Open Sans", sans-serif;
+}
+#text-area {
+  height: 200px;
+}
+#github,
+#linkedin {
+  width: 200px;
+  height: 200px;
+  margin-top: 5%;
+  margin-left: 20%;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#github a {
+  text-decoration: none;
+  color: rgb(1, 117, 117);
+}
 #rightContainer,
 #bottom-container {
   width: auto;
