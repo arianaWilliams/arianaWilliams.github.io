@@ -26,18 +26,30 @@
       <!-- add header with nav -->
       <nav>
         <div class="nav-wrapper">
-          <a href="./index.html" class="brand-logo">Logo</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="./index.html">Home</a></li>
+          <a href="#" class="brand-logo">Logo</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+            ><i class="material-icons">menu</i></a
+          >
+          <ul class="right hide-on-med-and-down">
+            <li class="coloredWords"><a href="./index.html">Home</a></li>
             <li><a href="./myWork.html">My Work</a></li>
             <li><a href="./aboutMe.html">About Me</a></li>
             <li><a href="./contactMe.html">Contact Me</a></li>
           </ul>
         </div>
       </nav>
+
+      <ul class="sidenav" id="mobile-demo">
+        <li class="coloredWords"><a href="./index.html">Home</a></li>
+        <li><a href="./myWork.html">My Work</a></li>
+        <li><a href="./aboutMe.html">About Me</a></li>
+        <li><a href="./contactMe.html">Contact Me</a></li>
+      </ul>
     </header>
 
     <main id="mainContainer">
+      <div class="row">
+        <div class="col s12">
       <div id="card-stack">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
@@ -164,11 +176,13 @@
           </div>
         </div>
       </div>
+    </div>
+    </div>
     </main>
 
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- <script src="./js/script.js"></script> -->
+    <script src="./js/script.js"></script>
   </body>
   <!-- getting domain names https://domains.google.com/registrar/search?_ga=2.153902072.1578395095.1686757074-1840234538.1686757074&_gl=1*1vbks9y*_gcl_aw*R0NMLjE2ODY3NTcwNzUuQ2p3S0NBand5cVdrQmhCTUVpd0FwMnlVRnAtRVFJeUoyTlU1anBhamFrQTBOU2x6Z21hWUpDQUlyWVhBbFpLMnQ3VDlHR2cydmVLZVpCb0NaUmtRQXZEX0J3RQ..*_gcl_dc*R0NMLjE2ODY3NTcwNzUuQ2p3S0NBand5cVdrQmhCTUVpd0FwMnlVRnAtRVFJeUoyTlU1anBhamFrQTBOU2x6Z21hWUpDQUlyWVhBbFpLMnQ3VDlHR2cydmVLZVpCb0NaUmtRQXZEX0J3RQ..*_gcl_au*MTc1MzU1NDExMy4xNjg2NzU3MDc1*_ga*MTg0MDIzNDUzOC4xNjg2NzU3MDc0*_ga_9YWT2H669H*MTY4Njc1NzA3NS4xLjAuMTY4Njc1NzA3NS4wLjAuMA.. -->
 </html>

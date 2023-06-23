@@ -16,79 +16,95 @@
       <!-- add header with nav -->
       <nav>
         <div class="nav-wrapper">
-          <a href="./index.html" class="brand-logo">Logo</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="./index.html">Home</a></li>
+          <a href="#" class="brand-logo">Logo</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+            ><i class="material-icons">menu</i></a
+          >
+          <ul class="right hide-on-med-and-down">
+            <li class="coloredWords"><a href="./index.html">Home</a></li>
             <li><a href="./myWork.html">My Work</a></li>
             <li><a href="./aboutMe.html">About Me</a></li>
             <li><a href="./contactMe.html">Contact Me</a></li>
           </ul>
         </div>
       </nav>
+
+      <ul class="sidenav" id="mobile-demo">
+        <li class="coloredWords"><a href="./index.html">Home</a></li>
+        <li><a href="./myWork.html">My Work</a></li>
+        <li><a href="./aboutMe.html">About Me</a></li>
+        <li><a href="./contactMe.html">Contact Me</a></li>
+      </ul>
     </header>
 
-    <section>
-      <div class="flex-container">
-        <div id="contact-form" class="row">
-          <form class="col s12">
-            <div class="short-text">
-              <label for="first-name">First name:</label>
-              <input
-                placeholder="Enter your first name"
-                type="text"
-                id="first-name"
-                name="first-name"
-                required
-              />
-            </div>
-            <div class="short-text">
-              <label for="last-name">Last name:</label>
-              <input
-                placeholder="Enter your last name"
-                type="text"
-                id="last-name"
-                name="last-name"
-                required
-              />
-            </div>
-            <div class="short-text">
-              <label for="phone-number">Phone number:</label>
-              <input
-                placeholder="Enter your phone number"
-                type="tel"
-                id="phone-number"
-                name="phone-number"
-              />
-            </div>
-            <div id="email">
-              <label for="email">email:</label>
-              <input
-                placeholder="Enter your email"
-                type="text"
-                id="email"
-                name="email"
-                required
-              />
-            </div>
-            <div id="text-area">
-              <label for="text-area">Lets get in contact</label>
-              <br />
-              <textarea
-                placeholder="You can email me here..."
-                name="text-area"
-                id="text-area"
-                cols="30"
-                rows="10"
-                data-length="300"
-              >
-              </textarea>
-            </div>
-            <div id="submit">
-              <input id="submit-button" type="submit" value="Email Me" />
-            </div>
-          </form>
+    <section class="section">
+      <div class="row">
+        <div class="col s12 header_text">
+          <h2>Fill out the form to Email Me</h2>
+          <h5>Or click the links to see more</h5>
         </div>
-        <div id="social-media">
+        <div id="left_box" class="col s8 m6">
+          <div id="form_container">
+            <form class="col s12" action="send_email.php" method="POST">
+              <div class="short-text">
+                <label for="first-name">First name:</label>
+                <input
+                  placeholder="Enter your first name"
+                  type="text"
+                  id="first-name"
+                  name="first-name"
+                  required
+                />
+              </div>
+              <div class="short-text">
+                <label for="last-name">Last name:</label>
+                <input
+                  placeholder="Enter your last name"
+                  type="text"
+                  id="last-name"
+                  name="last-name"
+                  required
+                />
+              </div>
+              <div class="short-text">
+                <label for="phone-number">Phone number:</label>
+                <input
+                  placeholder="Enter your phone number"
+                  type="tel"
+                  id="phone-number"
+                  name="phone-number"
+                />
+              </div>
+              <div id="email">
+                <label for="email">email:</label>
+                <input
+                  placeholder="Enter your email"
+                  type="text"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </div>
+              <div id="text-area">
+                <label for="text-area">Lets get in contact</label>
+                <br />
+                <textarea
+                  placeholder="You can email me here..."
+                  name="text-area"
+                  id="text-area"
+                  cols="30"
+                  rows="10"
+                  data-length="300"
+                >
+                </textarea>
+              </div>
+              <div id="submit">
+                <input id="submit-button" type="submit" value="Email Me" />
+              </div>
+            </form>
+          </div>
+        </div>
+        <div id="right_box" class="col s4 m6">
           <div id="github">
             <a href="https://github.com/arianaWilliams?tab=repositories"
               >Git Hub</a
@@ -110,5 +126,7 @@
       defer
       type="text/javascript"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
