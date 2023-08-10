@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <title>Search Recipes</title>
+  </head>
+  <body>
+    {% for recipe in recipes %}
+    <div class="card" style="width: 18rem">
+      <img
+        src="{{ recipe.thumbnail_url }}"
+        class="card-img-top"
+        alt="Recipe Image"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ recipe.label }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Ingredients:</h6>
+        <ul class="list-group">
+          {% for ingredient in recipe.ingredients %}
+          <li class="list-group-item">{{ ingredient }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <a href="{{ recipe.source_url }}" class="btn btn-primary"
+        >Get full Recipe</a
+      >
+      <a href="..." class="btn btn-primary">Save Recipe</a>
+    </div>
+    {% endfor %}
+  </body>
+</html>
+
+#!/usr/bin/python3 import requests import json from pprint import pprint from
+jinja2 import Environment, FileSystemLoader import os from flask import Flask,
+render_template, request app = Flask(__name__) EDAMAM =
+'https://api.edamam.com/api/recipes/v2?type=public&' def recipeSearch(myid,
+mykey, searchstring): api =
+f"{EDAMAM}app_id={myid}&app_key={mykey}&q={searchstring}" # API call resp =
+requests.get(api) # check if request is successful if resp.status_code == 200:
+data = resp.json() pprint(data) # Only get relevant info hits = data.get("hits",
+[]) for hit in hits: recipe = hit.get("recipe", {}) thumbnail_url =
+recipe.get("image", "") # get the label label = recipe.get("label", "") # get
+ingredients as a list ingredients = recipe.get("ingredientLines", []) # get the
+source and its URL source_name = recipe.get("source", "") source_url =
+recipe.get("url", "") # Print the info print("Thumbnail Image URL:",
+thumbnail_url) print("label:", label) print("Ingredients:") for ingredient in
+ingredients: print("-", ingredient) print("Source Name:", source_name)
+print("Source URL:", source_url) print("---------------------") else:
+print("Error:", resp.status_code) return recipe_data def harvestid(): with
+open("/home/student/recipe.pub") as apiidfile: return
+apiidfile.read().rstrip("\n") # get the api id def harvestkey(): with
+open("/home/student/recipe.priv") as apikeyfile: return
+apikeyfile.read().rstrip("\n") # get the api key def create_html(recipes):
+template_env = Environment(loader=FileSystemLoader(os.path.abspath(".")))
+template = template_env.get_template("recipephotocard.html") return
+template.render(recipes=recipes) @app.route("/", methods=["GET", "POST"]) def
+search_recipes(): if request.method == "POST": search_string =
+request.form.get("search_string") myid = harvestid() mykey = harvestkey()
+recipe_data = recipeSearch(myid, mykey, searchstring) if recipe_data:
+html_content = create_html(recipe_data) with open("recipe_results.html", "w") as
+file: file.write(html_content) print("HTML file 'recipe_results.html' created
+successfully!") return render_template("recipe_results.html",
+recipes=recipe_data) else: return "No recipes found for that search." return
+render_template("home.html") if __name__ == "__main__": app.run(host="0.0.0.0",
+port=2224, debug= True)

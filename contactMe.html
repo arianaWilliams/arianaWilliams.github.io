@@ -43,83 +43,105 @@
           <h2>Fill out the form to Email Me</h2>
           <h5>Or click the links to see more</h5>
         </div>
-        <div id="left_box" class="col s8 m6">
-          <div id="form_container">
-            <form class="col s12" action="send_email.php" method="POST">
-              <div class="short-text">
-                <label for="first-name">First name:</label>
-                <input
-                  placeholder="Enter your first name"
-                  type="text"
-                  id="first-name"
-                  name="first-name"
-                  required
-                />
-              </div>
-              <div class="short-text">
-                <label for="last-name">Last name:</label>
-                <input
-                  placeholder="Enter your last name"
-                  type="text"
-                  id="last-name"
-                  name="last-name"
-                  required
-                />
-              </div>
-              <div class="short-text">
-                <label for="phone-number">Phone number:</label>
-                <input
-                  placeholder="Enter your phone number"
-                  type="tel"
-                  id="phone-number"
-                  name="phone-number"
-                />
-              </div>
-              <div id="email">
-                <label for="email">email:</label>
-                <input
-                  placeholder="Enter your email"
-                  type="text"
-                  id="email"
-                  name="email"
-                  required
-                />
-              </div>
-              <div id="text-area">
-                <label for="text-area">Lets get in contact</label>
-                <br />
-                <textarea
-                  placeholder="You can email me here..."
-                  name="text-area"
-                  id="text-area"
-                  cols="30"
-                  rows="10"
-                  data-length="300"
-                >
-                </textarea>
-              </div>
-              <div id="submit">
-                <input id="submit-button" type="submit" value="Email Me" />
-              </div>
-            </form>
+        <!-- add another div with class row -->
+        <div class="row">
+          <div id="left_box" class="col s12 m8">
+            <div id="form_container">
+              <form
+                id="contact_me"
+                class="col s12"
+                action="send_email.php"
+                method="POST"
+              >
+                <div class="short-text">
+                  <label for="first-name">First name:</label>
+                  <input
+                    placeholder="Enter your first name"
+                    type="text"
+                    id="first-name"
+                    name="first-name"
+                    required
+                  />
+                </div>
+                <div class="short-text">
+                  <label for="last-name">Last name:</label>
+                  <input
+                    placeholder="Enter your last name"
+                    type="text"
+                    id="last-name"
+                    name="last-name"
+                    required
+                  />
+                </div>
+                <div class="short-text">
+                  <label for="phone-number">Phone number:</label>
+                  <input
+                    placeholder="Enter your phone number"
+                    type="tel"
+                    id="phone-number"
+                    name="phone-number"
+                  />
+                </div>
+                <div id="email">
+                  <label for="email">email:</label>
+                  <input
+                    placeholder="Enter your email"
+                    type="text"
+                    id="email"
+                    name="email"
+                    required
+                  />
+                </div>
+                <div id="text-area">
+                  <label for="text-area">Lets get in contact</label>
+                  <br />
+                  <textarea
+                    placeholder="You can email me here..."
+                    name="message"
+                    id="text-area"
+                    cols="30"
+                    rows="10"
+                    data-length="300"
+                  >
+                  </textarea>
+                </div>
+                <div id="submit-button">
+                  <input type="submit" value="Email Me" />
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
-        <div id="right_box" class="col s4 m6">
-          <div id="github">
-            <a href="https://github.com/arianaWilliams?tab=repositories"
-              >Git Hub</a
-            >
-          </div>
-          <div id="linkedin">
-            <a
-              class="badge-base__link LI-simple-link"
-              href="https://www.linkedin.com/in/ariana-williams-584568125?trk=profile-badge"
-              >Linked In</a
-            >
+          <div id="right_box" class="col s12 m4">
+            <div id="github">
+              <a href="https://github.com/arianaWilliams?tab=repositories"
+                >Git Hub</a
+              >
+            </div>
+            <div id="linkedin">
+              <a
+                class="badge-base__link LI-simple-link"
+                href="https://www.linkedin.com/in/ariana-williams-584568125?trk=profile-badge"
+                >Linked In</a
+              >
+            </div>
           </div>
         </div>
       </div>
     </section>
+    <footer>
+      <!-- add header with nav -->
+      <nav>
+        <div class="nav-wrapper">
+          <ul class="center">
+            <li class="coloredWords"><a href="./index.html">Home</a></li>
+            <li><a href="./myWork.html">My Work</a></li>
+            <li><a href="./aboutMe.html">About Me</a></li>
+            <li><a href="./contactMe.html">Contact Me</a></li>
+          </ul>
+        </div>
+      </nav>
+    </footer>
+
     <script
       src="https://platform.linkedin.com/badges/js/profile.js"
       async
@@ -127,6 +149,11 @@
       type="text/javascript"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
     <script src="./js/script.js"></script>
+    <script src="./js/contactScript.js"></script>
   </body>
 </html>
