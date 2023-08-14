@@ -340,7 +340,20 @@ a {
 }
 #aboutHeaders,
 #myInterest,
-#myHobbies {
+#myHobbies,
+#challenges {
   font-family: "Caveat", cursive;
   text-align: center;
+}
+
+.brand-logo,
+.logo {
+  font-family: "Beau Rivage", cursive;
+}
+
+#challenges_container {
+  background-color: rgb(240, 229, 217);
+  opacity: 0.7;
+  border-radius: 1rem;
+  padding: 2%;
 }
